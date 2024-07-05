@@ -1,0 +1,135 @@
+// 生成ボタンの下のコンテナ
+.d2pp-action-container {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 0.75em;
+}
+
+/** 全体コンテナ */
+.d2pp-pp-container {
+    display: none;
+}
+
+.d2pp-action-container,
+.d2pp-pp-container {
+    /* プリセットボタンを格納する枠 */
+    .d2pp-preset-field {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        min-width: min(320px, 100%);
+        max-width: 100%;
+        height: fit-content;
+        padding: 8px;
+        border: solid 1px var(--block-border-color, #374151);
+        border-radius: var(--block-radius, 8px);
+        flex: 1 1 calc(50% - 20px);
+
+        /* ランダムボタンも格納する枠 */
+        &.d2ps-tag-field.d2ps-tag-field--with-random {
+            flex-direction: column;
+        }
+    }
+    /* ボタン */
+    .d2pp-button {
+        // 共通
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--button-small-padding);
+        border-radius: var(--button-small-radius);
+        box-shadow: var(--button-shadow);
+        text-align: center;
+        font-weight: var(--button-small-text-weight);
+        transition: var(--button-transition);
+
+        // カスタム要素
+        border: var(--button-border-width) solid var(--d2pp-button--border-color, var(--button-secondary-border-color));
+        background: var(--d2pp-button--background-fill, var(--button-secondary-background-fill));
+        color: var(--d2pp-button--text-color, var(--button-secondary-text-color));
+
+        &:hover {
+            border-color: var(--d2pp-button--border-color-hover, var(--button-secondary-border-color-hover));
+            background: var(--d2pp-button--background-fill-hover, var(--button-secondary-background-fill-hover));
+            color: var(--d2pp-button--text-color-hover, var(--button-secondary-text-color-hover));
+        }
+
+        /* タグリストを開くボタン */
+        &.d2pp-button--open {
+            flex: 1;
+        }
+    }
+}
+
+// ツールチップ用リスト
+.d2pp-param-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+// .d2pp-param-list-description {
+// }
+
+.d2pp-param-list-item {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 7rem 1fr;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+
+    dt,
+    dd {
+        padding: 0.3rem;
+    }
+
+    dt {
+        display: flex;
+        align-items: center;
+        background-color: #224276;
+        line-height: 1;
+        color: #8ba5d0;
+    }
+    dd {
+        margin-left: 0;
+        background-color: #355994;
+    }
+}
+
+// ツールチップ
+.d2pp-tooltip-container {
+    display: none;
+    position: fixed;
+    box-sizing: border-box;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    color: #fff;
+    pointer-events: none;
+    opacity: 1;
+
+    &[data-show='true'] {
+        display: block;
+        opacity: 1;
+    }
+    &[data-show='false'] {
+        display: block;
+        animation-name: d2pp-tooltip-hide;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes d2pp-tooltip-hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,81 @@
+txt2img:
+  -
+    title: "ベースサイズ"
+    description: "832x1088でHires.fix無し"
+    params:
+      -
+        selector: "#txt2img_width input[type='number']"
+        value: "832"
+      -
+        selector: "#txt2img_height input[type='number']"
+        value: "1088"
+      -
+        selector: '#txt2img_hr-visible-checkbox'
+        value: "false"
+  -
+    title: "ベースサイズ + Hires.fix"
+    description: "832x1088をHires.fixで1.5倍"
+    params:
+      -
+        selector: "#txt2img_width input[type='number']"
+        value: "832"
+      -
+        selector: "#txt2img_height input[type='number']"
+        value: "1088"
+      -
+        selector: '#txt2img_hr-visible-checkbox'
+        value: "true"
+      -
+        selector: "#txt2img_hires_steps input[type='number']"
+        value: "20"
+      -
+        selector: "#txt2img_denoising_strength input[type='number']"
+        value: "0.45"
+# ///////////////////////////////////
+# ///////////////////////////////////
+img2img:
+  -
+    title: "アプスケ（中）"
+    description: "1248x1632にアプスケ。denoise大きめ"
+    params:
+      -
+        selector: "#img2img_width input[type='number']"
+        value: "1248"
+      -
+        selector: "#img2img_height input[type='number']"
+        value: "1632"
+      -
+        selector: "#img2img_denoising_strength input[type='number']"
+        value: "0.7"
+      -
+        selector: "#img2img_controlnet_ControlNet-0_controlnet_enable_checkbox input[type='checkbox']"
+        value: "true"
+      -
+        selector: "#img2img_controlnet_ControlNet-0_controlnet_control_weight_slider input[type='checkbox']"
+        value: "0.5"
+      -
+        selector: "#img2img_controlnet_ControlNet-0_controlnet_ending_control_step_slider input[type='checkbox']"
+        value: "0.7"
+
+  -
+    title: "アプスケ（大）"
+    description: "1568x2048にアプスケ。denoise小さめ"
+    params:
+      -
+        selector: "#img2img_width input[type='number']"
+        value: "1568"
+      -
+        selector: "#img2img_height input[type='number']"
+        value: "2048"
+      -
+        selector: "#img2img_denoising_strength input[type='number']"
+        value: "0.45"
+      -
+        selector: "#img2img_controlnet_ControlNet-0_controlnet_enable_checkbox input[type='checkbox']"
+        value: "true"
+      -
+        selector: "#img2img_controlnet_ControlNet-0_controlnet_control_weight_slider input[type='checkbox']"
+        value: "0.5"
+      -
+        selector: "#img2img_controlnet_ControlNet-0_controlnet_ending_control_step_slider input[type='checkbox']"
+        value: "0.7"
