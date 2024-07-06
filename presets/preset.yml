@@ -35,6 +35,24 @@ txt2img:
 # ///////////////////////////////////
 img2img:
   -
+    title: "1枚"
+    params:
+      -
+        selector: "#img2img_column_batch input[type='number']"
+        value: "1"
+  -
+    title: "5枚"
+    params:
+      -
+        selector: "#img2img_column_batch input[type='number']"
+        value: "5"
+  -
+    title: "10枚"
+    params:
+      -
+        selector: "#img2img_column_batch input[type='number']"
+        value: "10"
+  -
     title: "アプスケ（中）"
     description: "1248x1632にアプスケ。denoise大きめ"
     params:

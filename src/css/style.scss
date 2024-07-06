@@ -59,6 +59,15 @@
         &.d2pp-button--open {
             flex: 1;
         }
+
+        /* プリセットボタン */
+        &.d2pp-button--preset {
+            &:active {
+                border: var(--button-border-width) solid var(--button-primary-border-color);
+                background: var(--button-primary-background-fill);
+                color: var(--button-primary-text-color);
+            }
+        }
     }
 }
 

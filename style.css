@@ -49,6 +49,7 @@
   background: var(--d2pp-button--background-fill, var(--button-secondary-background-fill));
   color: var(--d2pp-button--text-color, var(--button-secondary-text-color));
   /* タグリストを開くボタン */
+  /* タグリストを開くボタン */
 }
 .d2pp-action-container .d2pp-button:hover,
 .d2pp-pp-container .d2pp-button:hover {
@@ -59,6 +60,12 @@
 .d2pp-action-container .d2pp-button.d2pp-button--open,
 .d2pp-pp-container .d2pp-button.d2pp-button--open {
   flex: 1;
+}
+.d2pp-action-container .d2pp-button.d2pp-button--preset:active,
+.d2pp-pp-container .d2pp-button.d2pp-button--preset:active {
+  border: var(--button-border-width) solid var(--button-primary-border-color);
+  background: var(--button-primary-background-fill);
+  color: var(--button-primary-text-color);
 }
 
 .d2pp-param-list-container {
